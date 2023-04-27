@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Todo app</title>
+    <link rel="stylesheet" href="../dist/output.css" />
+  </head>
+
+  <body class="relative m-0 p-0 box-border bg-[#F2F2F2] overflow-visible">
+    <header
+      class="relative w-screen h-48 bg-cover bg-no-repeat bg-center"
+      style="background-image: url(../images/bg-desktop-light.jpg)"
+    >
+      <div
+        class="w-80 h-5 absolute top-12 right-6 left-7 flex space-x-44 items-center"
+      >
+        <small
+          class="w-28 h-5 block font-Josefin font-bold text-2xl tracking-[0.70em] text-white"
+          >TODO</small
+        >
+        <img
+          src="../images/icon-moon.svg"
+          alt=""
+          class="w-[19.32px] h-[20px]"
+        />
+      </div>
+      <div
+        class="flex items-center justify-evenly absolute top-28 -left-0.5 right-6"
+      >
+        <button
+          class="flex items-center justify-evenly rounded-full bg-white shadow-inner shadow-slate-700 active:scale-75"
+        >
+          <img
+            src="../images/plus-icon.svg"
+            alt=""
+            class="h-[30px] rounded-full p-1"
+          />
+        </button>
+        <input
+          type="text"
+          class="w-8/12 text-base rounded-b-none px-5 py-2 placeholder:text-gray-500 placeholder:font-Josefin focus:outline-none focus:drop-shadow-2xl rounded-t-sm"
+          placeholder="Create a new todo"
+        />
+      </div>
+
+      <p
+        class="pt-1 font-Lato text-sm text bg-white text-red-600 font-bold p-1 rounded-b-lg absolute top-[9.5rem] left-[5.95rem] hidden"
+        id="invalid-message"
+      >
+        Please Enter valid input
+      </p>
+    </header>
+
+    <div id="output-container" class="p-0 m-0 border-box font-Josefin">
+      <div
+        class="block bg-slate-50 p-2 min-w-[100%] max-w-fit flex items-center rounded-b-md border-b-[2.5px]"
+      >
+        <button
+          class="bg-slate-100 flex items-center justify-between rounded-full flex-grow-0 flex-shrink-0 check-btn drop-shadow-sm"
+          onclick="markButtonCheck(this)"
+        >
+          <img
+            src="../images/icon-check.svg"
+            class="m-3 flex justify-center items-center"
+            alt=""
+          />
+        </button>
+        <p class="hyphens-auto p-3 pr-[30px] text-justify">
+          Complete Web Development Project
+        </p>
+        <button
+          class="p-1 absolute right-[5px] delete-task-btn bg-slate-100 rounded-full drop-shadow-sm focus:drop-shadow-lg active:scale-75"
+          onclick="removeTask(this)"
+        >
+          <img class="w-4 block m-2" src="../images/icon-cross.svg" alt="" />
+        </button>
+      </div>
+    </div>
+    <script src=" script.js"></script>
+  </body>
+</html>
